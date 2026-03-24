@@ -6,25 +6,16 @@ Materials for the Chem4Energy conference hands-on workshop on ASE/MACE.
 
 If you are new to coding projects, follow these steps in order.
 
-1. Open a terminal (PowerShell on Windows).
-2. Move to the folder where you want to store the project, for example:
+1. Open VS Code.
+2. Open the Command Palette (`Ctrl+Shift+P`) and run `Git: Clone`.
+3. Paste the GitHub repository link:
 
-```powershell
-cd C:\Users\<your-username>\Documents\GitHub
+```text
+https://github.com/ikowalec/chem4energy-2026.git
 ```
 
-3. Clone the project using the GitHub link:
-
-```powershell
-git clone https://github.com/ikowalec/chem4energy-2026.git
-cd chem4energy-2026
-```
-
-4. Open the project in VS Code:
-
-```powershell
-code .
-```
+4. Choose where to save the project on your computer.
+5. Click `Open` when VS Code asks to open the cloned repository.
 
 ## Prerequisites
 
