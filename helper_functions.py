@@ -1,63 +1,68 @@
-def generate_pymatgen_surface(bulk_model, layers=2, symmetric=True, miller_index=(1,0,0), vacuum=20, spin=False,
-							 tol=0.01):
-	'''
+def generate_pymatgen_surface(
+    bulk_model,
+    layers=2,
+    symmetric=True,
+    miller_index=(1, 0, 0),
+    vacuum=20,
+    spin=False,
+    tol=0.01,
+):
+    """
+    Generate slab models for a given Miller index using pymatgen, then return ASE Atoms objects.
 
-	Function to create slab models for different facets using pymatgen. This is particularly useful to create slabs
-	for multi component bulk like oxides, sulphides, pervoskites, etc. In such cases, a given facet can have
-	multiple terminations and this functionality enumerates over all possible terminations. For example, a metal oxide
-	having formula MO can have an M-termination or an O-termination.
+    This function is useful for multicomponent materials (oxides, sulfides, perovskites, etc.),
+    where a single facet can yield multiple chemically distinct terminations.
 
-	Parameters:
+    Parameters
+    ----------
+    bulk_model : ase.Atoms
+        Conventional bulk unit cell to cut slabs from.
+    layers : int, default=2
+        Slab thickness in pymatgen "unit planes" (not equivalent to ASE atomic layers).
+    symmetric : bool, default=True
+        If True, request symmetrized slabs from pymatgen.
+    miller_index : tuple[int, int, int], default=(1, 0, 0)
+        Facet orientation.
+    vacuum : float, default=20
+        Vacuum thickness in Angstrom along the slab normal (z-axis after conversion).
+    spin : bool, default=False
+        If True, transfer initial magnetic moments from ASE to pymatgen structure.
+    tol : float, default=0.01
+        Termination tolerance (`ftol`) used by pymatgen when enumerating slabs.
+    """
+    from pymatgen.core.surface import SlabGenerator
+    from pymatgen.io.ase import AseAtomsAdaptor
 
-	bulk_model: Atoms object
-		provide the unit cell and make sure this is the conventional bulk unit cell
-	layers: int
-		specify the repeating layers along the direction perpendicular to the plane of the desired facet. This basically
-		defines the thickness of the slab.
-		Note: It is important to note that the definition of a layer in pymatgen depends on the primitive slab unit cell
-		and does not represent an atomic layer (like ASE). Please check the thickness the slab generated using this
-		functionality and make sure it is as desired before running any calculations.
-	symmetric: boolean
-		Whether you want the slab model to be symmetric. Note: this parameter should always be set to 'True' (unless
-		asymmetric slabs are needed in special cases) as Tasker classification states that asymmetric slabs are inherently
-		unstable.
-	miller_index: tuple
-		specify facet required as a tuple
-	vacuum: float
-		specifies the vacuum addition to the slab in the direction of 'axis-' of the 'center' function
-	spin: boolean
-		specify whether the bulk geometry Atoms object has specified spin moments on atoms
-	save: boolean
-		specifies whether the generated surfaces should be saved as .in files. If set to True, the
-		function will save the generated files in different folder. Each folder will have a slab model which
-		corresponds to a given slab thickness (layers), termination and symmetry. The folder name will have the format
-		{symmetric}_slab_{termination}_{n}_layers
-	tol: float
-		the tolerance value decides how many terminations are generated for a given facet. A very small value of tolerance
-		(for example 0.001) can lead to unphysical terminations. In most cases, the value 0.01 is sufficient to enumerate
-		over all terminations.
-	'''
+    # Convert ASE Atoms to pymatgen Structure so we can use SlabGenerator.
+    structure = AseAtomsAdaptor.get_structure(bulk_model)
 
-	from ase.io import read
-	from ase.build import surface, make_supercell
-	from pymatgen.io.ase import AseAtomsAdaptor
-	from pymatgen.core.surface import SlabGenerator
-	structure = AseAtomsAdaptor.get_structure(bulk_model)
-	charge_list = list(bulk_model.get_initial_charges())
-	structure.add_oxidation_state_by_site(charge_list)
-	if spin:
-		spin_list = list(bulk_model.get_initial_magnetic_moments())
-		structure.add_spin_by_site(spin_list)
-	slabgen = SlabGenerator(structure, miller_index=miller_index,
-							min_slab_size=layers,
-							min_vacuum_size=vacuum,
-							center_slab=True, in_unit_planes=True, lll_reduce=True)
-	slabs = slabgen.get_slabs(ftol=tol, symmetrize=symmetric)
-	slabs_ase = []
-	for j in range(len(slabs)):
-		surface = AseAtomsAdaptor.get_atoms(slabs[j].get_orthogonal_c_slab())
-		surface.center(vacuum=vacuum, axis=2)
-		surface.wrap()
-		slabs_ase.append(surface)
+    # Transfer oxidation states from initial charges if they are set on the ASE atoms.
+    charge_list = list(bulk_model.get_initial_charges())
+    structure.add_oxidation_state_by_site(charge_list)
 
-	return slabs_ase
+    # Optionally transfer spin information from initial magnetic moments.
+    if spin:
+        spin_list = list(bulk_model.get_initial_magnetic_moments())
+        structure.add_spin_by_site(spin_list)
+
+    # Build slab candidates for the target Miller index.
+    slabgen = SlabGenerator(
+        structure,
+        miller_index=miller_index,
+        min_slab_size=layers,
+        min_vacuum_size=vacuum,
+        center_slab=True,
+        in_unit_planes=True,
+        lll_reduce=True,
+    )
+    slabs = slabgen.get_slabs(ftol=tol, symmetrize=symmetric)
+
+    # Convert each pymatgen Slab back to ASE and ensure vacuum/wrapping are clean.
+    slabs_ase = []
+    for slab in slabs:
+        slab_atoms = AseAtomsAdaptor.get_atoms(slab.get_orthogonal_c_slab())
+        slab_atoms.center(vacuum=vacuum, axis=2)
+        slab_atoms.wrap()
+        slabs_ase.append(slab_atoms)
+
+    return slabs_ase
