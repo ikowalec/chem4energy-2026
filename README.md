@@ -50,12 +50,14 @@ https://ase-lib.org/examples_generated/index.html
 - (x) Setting up VS Code 
 - (x) Installing required libraries and cloning repo 
 - (x) Rendering images of structures 
-- (x) Surface cutting / editing structures 
+- (x) Surface cutting
+- ( ) Material doping and atomic substitutions
 - (x) Saving structures as input for qm codes 
-- () Using MACE as a calculator 
-- () Preparing data for MACE model tuning
-- () Automatic adsorbate placement
-- () Cluster discovery
+- ( ) Using MACE as a calculator 
+- ( ) Preparing data for MACE model tuning
+- ( ) Automatic adsorbate placement
+- ( ) Cluster discovery
+- ( ) Connectivity matrix and nearest neighbors
 
 # Calculations via ASE:
 - () TS search (+ method breakdown)
