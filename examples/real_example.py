@@ -18,7 +18,7 @@ slabs = surface(bulk_model,
                symmetric=True, 
                miller_index=(0, 0, 1), 
                vacuum=vacuum, 
-               spin=False,
+               spin=True,
 			   tol=0.01)
 
 # Constrain the bottom 6 Angstroms of the slab to mimic bulk behavior during relaxation. 

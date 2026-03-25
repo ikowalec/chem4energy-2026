@@ -36,12 +36,6 @@ def generate_pymatgen_surface(bulk_model, layers=2, symmetric=True, miller_index
 		the tolerance value decides how many terminations are generated for a given facet. A very small value of tolerance
 		(for example 0.001) can lead to unphysical terminations. In most cases, the value 0.01 is sufficient to enumerate
 		over all terminations.
-	path: str
-		path to save the folders for slabs
-	file_format: str
-		specify the file format for saving the slab model. Note that the format provided has to be compatible with ASE
-		file io writer. Please check ASE's documentation for supported file format.
-
 	'''
 
 	from ase.io import read
