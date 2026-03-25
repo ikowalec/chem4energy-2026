@@ -60,7 +60,8 @@ https://ase-lib.org/examples_generated/index.html
 - ( ) Preparing data for MACE model tuning
 - ( ) Automatic adsorbate placement
 - ( ) Cluster discovery
-- ( ) Connectivity matrix and nearest neighbors
+- ( ) Connectivity matrix and nearest neighbors analysis
+- ( ) Similarity matrices -> ensuring a diverse dataset
 
 # Calculations via ASE:
 - () TS search (+ method breakdown)
