@@ -15,8 +15,11 @@ def generate_pymatgen_surface(
 
     Parameters
     ----------
-    bulk_model : ase.Atoms
-        Conventional bulk unit cell to cut slabs from.
+    bulk_model : ase.Atoms | pymatgen.core.Structure | str
+        Bulk structure source. Accepted values are:
+        - ASE `Atoms` (recommended for preserving ASE initial charges/magmoms),
+        - pymatgen `Structure`,
+        - path to a structure file readable by pymatgen.
     layers : int, default=2
         Slab thickness in pymatgen "unit planes" (not equivalent to ASE atomic layers).
     symmetric : bool, default=True
@@ -26,24 +29,40 @@ def generate_pymatgen_surface(
     vacuum : float, default=20
         Vacuum thickness in Angstrom along the slab normal (z-axis after conversion).
     spin : bool, default=False
-        If True, transfer initial magnetic moments from ASE to pymatgen structure.
+        If True and `bulk_model` is ASE `Atoms`, transfer initial magnetic moments to
+        the pymatgen structure.
     tol : float, default=0.01
         Termination tolerance (`ftol`) used by pymatgen when enumerating slabs.
     """
+    from pathlib import Path
+
     from pymatgen.core.surface import SlabGenerator
+    from pymatgen.core import Structure
     from pymatgen.io.ase import AseAtomsAdaptor
+    from ase import Atoms
 
-    # Convert ASE Atoms to pymatgen Structure so we can use SlabGenerator.
-    structure = AseAtomsAdaptor.get_structure(bulk_model)
+    if isinstance(bulk_model, Atoms):
+        structure = AseAtomsAdaptor.get_structure(bulk_model)
+    elif isinstance(bulk_model, Structure):
+        structure = bulk_model
+    elif isinstance(bulk_model, (str, Path)):
+        structure = Structure.from_file(str(bulk_model))
+    else:
+        raise ValueError(
+            "bulk_model must be an ASE Atoms object, a pymatgen Structure, or a file path to a structure file."
+        )
 
-    # Transfer oxidation states from initial charges if they are set on the ASE atoms.
-    charge_list = list(bulk_model.get_initial_charges())
-    structure.add_oxidation_state_by_site(charge_list)
+    # Transfer oxidation states only when the input is ASE Atoms.
+    if isinstance(bulk_model, Atoms):
+        charge_list = list(bulk_model.get_initial_charges())
+        if charge_list and len(charge_list) == len(structure):
+            structure.add_oxidation_state_by_site(charge_list)
 
-    # Optionally transfer spin information from initial magnetic moments.
-    if spin:
+    # Optionally transfer spin information only from ASE Atoms input.
+    if spin and isinstance(bulk_model, Atoms):
         spin_list = list(bulk_model.get_initial_magnetic_moments())
-        structure.add_spin_by_site(spin_list)
+        if spin_list and len(spin_list) == len(structure):
+            structure.add_spin_by_site(spin_list)
 
     # Build slab candidates for the target Miller index.
     slabgen = SlabGenerator(
