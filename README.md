@@ -39,3 +39,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
+```powershell
+pip install -r requirements.txt
+```
+
