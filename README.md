@@ -34,10 +34,15 @@ Run this command once to allow Python virtual environment activation in VS Code 
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
 ```
 
-Then create and activate a virtual environment in the project folder:
+Then create and activate a virtual environment in the project folder (or via Create venv menu):
 
 ```powershell
 python -m venv .venv
+```
+
+If you created the venv via VS Code window there is a good chance it pick up the requirements file and downloaded the relevant libraries. If not, activate the environment and install the libraries from the file:
+
+```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
