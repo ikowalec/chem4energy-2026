@@ -45,3 +45,20 @@ pip install -r requirements.txt
 
 # ASE official tutorials:
 https://ase-lib.org/examples_generated/index.html
+
+# Topics to cover:
+- (x) Setting up VS Code 
+- (x) Installing required libraries and cloning repo 
+- (x) Rendering images of structures 
+- (x) Surface cutting / editing structures 
+- (x) Saving structures as input for qm codes 
+- () Using MACE as a calculator 
+- () Preparing data for MACE model tuning
+- () Automatic adsorbate placement
+- () Cluster discovery
+
+# Calculations via ASE:
+- () TS search (+ method breakdown)
+- () vibrational frequency calculations
+- () ?
+
