@@ -35,7 +35,7 @@ for slab in slabs:
 """
 # If there is a pre-supplied list of charges.
 list_of_charges = []
-slab.set_initial_charges(list_of_charges) # set the initial charges for the slab
+slab.set_initial_charges(list_of_charges)
 """
 # view(slabs)
 
