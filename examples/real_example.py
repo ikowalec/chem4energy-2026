@@ -14,23 +14,38 @@ bulk_model = read("examples/TiNiO3.cif")
 # view(bulk_model)
 vacuum = 20 # in Angstrom
 slabs = surface(bulk_model, 
-               layers=2, 
+               layers=1, # use 2 to to see more terminations
                symmetric=True, 
                miller_index=(0, 0, 1), 
                vacuum=vacuum, 
                spin=False,
 			   tol=0.01)
 
-# view(slabs)
-
-# Constrain the bottom 10 Angstroms of the slab to mimic bulk behavior during relaxation. 
+# Constrain the bottom 6 Angstroms of the slab to mimic bulk behavior during relaxation. 
 for slab in slabs:
-    c = FixAtoms(mask=[atom.index for atom in slab if atom.z < vacuum + 10]) 
+    c = FixAtoms(mask=[atom.index for atom in slab if atom.z < vacuum + 6]) 
     slab.set_constraint(c)
 
-# example structure writing
+# Adjust initial charges
+species_charges = {'Ti': 4, 'Ni': 2, 'O': -2} # example charges for each species
+for slab in slabs:
+    for atom in slab:
+        atom.charge = species_charges.get(atom.symbol) # set charge based on species, default to 0 if not found
 
+"""
+# If there is a pre-supplied list of charges.
+list_of_charges = []
+slab.set_initial_charges(list_of_charges) # set the initial charges for the slab
+"""
+# view(slabs)
+
+# example structure writing
 atoms = slabs[0] # take the first slab for demonstration
+
+# make a supercell
+atoms = atoms.repeat((2, 2, 1)) 
+
+view(atoms)
 
 # Define input parameters for Quantum Espresso
 input_data = {
@@ -53,7 +68,10 @@ input_data = {
     'ion_dynamics': 'bfgs',
     'bfgs_ndim': 6,
     'startingwfc': 'random',
-}  # This flat dictionary will be converted to a nested dictionary where, for example, "calculation" will be put into the "control" section
+}  
+
+# This flat dictionary will be converted to a nested dictionary where, 
+# for example, "calculation" will be put into the "control" section
 
 pseudopotentials = {
     'Ti': 'Ti.pz-vbc.UPF',
