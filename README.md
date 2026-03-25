@@ -2,6 +2,8 @@
 
 Materials for the Chem4Energy conference hands-on workshop on ASE/MACE.
 
+![alt text](QR.png)
+
 ## Start Here (First-Time Users)
 
 If you are new to coding projects, follow these steps in order.
