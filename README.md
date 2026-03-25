@@ -43,3 +43,5 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+# ASE official tutorials:
+https://ase-lib.org/examples_generated/index.html
