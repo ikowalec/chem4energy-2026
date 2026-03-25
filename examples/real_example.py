@@ -23,18 +23,9 @@ slabs = surface(bulk_model,
 
 # view(slabs)
 
-"""
-# Constrain bulk layers based on tag applied in the surface function
-def constrain_stoichiometric_layer(slab, constrained_units=1):
-    species = set(slab.get_chemical_symbols())
-    for sp in species:
-        counter = {sp: slab.get_chemical_symbols().count(sp)}
-"""    
-    
-
-# take ti ni o3 x2 on the bottom based on z coordinate of each species
+# Constrain the bottom 10 Angstroms of the slab to mimic bulk behavior during relaxation. 
 for slab in slabs:
-    c = FixAtoms(mask=[atom.index for atom in slab if atom.z < vacuum + 10]) # fix bottom 10 Angstrom
+    c = FixAtoms(mask=[atom.index for atom in slab if atom.z < vacuum + 10]) 
     slab.set_constraint(c)
 
 # example structure writing
