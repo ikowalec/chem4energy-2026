@@ -56,6 +56,7 @@ https://ase-lib.org/examples_generated/index.html
 - ( ) Material doping and atomic substitutions
 - (x) Saving structures as input for qm codes 
 - ( ) Using MACE as a calculator 
+- ( ) How can we train MACE models on VASP (or any QM) calculations?
 - ( ) Preparing data for MACE model tuning
 - ( ) Automatic adsorbate placement
 - ( ) Cluster discovery
