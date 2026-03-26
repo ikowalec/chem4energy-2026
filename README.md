@@ -23,9 +23,9 @@ If you are new to coding projects, follow these steps in order.
 ```text
 https://github.com/ikowalec/chem4energy-2026.git
 ```
-
-4. Choose where to save the project on your computer.
-5. Click `Open` when VS Code asks to open the cloned repository.
+4. You will be prompted to register/sign in on GitHub, please make a free account if you don't have one.
+5. Choose where to save the project on your computer.
+6. Click `Open` when VS Code asks to open the cloned repository.
 
 
 
