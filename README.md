@@ -2,9 +2,17 @@
 
 Materials for the Chem4Energy conference hands-on workshop on ASE/MACE.
 
-![alt text](QR.png)
-
 ## Start Here (First-Time Users)
+
+## Prerequisites
+
+Python 3.11 is recommended for compatibility with typical HPC software stacks.
+
+1. Install Python 3.11: https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
+2. Install Git: https://git-scm.com/install/windows
+
+If you are not familiar with Python at all, please follow the official Cardiff University tutorials
+by Dr Tom Slater: https://github.com/TomSlater/Introduction-To-Programming-with-Python
 
 If you are new to coding projects, follow these steps in order.
 
@@ -19,14 +27,12 @@ https://github.com/ikowalec/chem4energy-2026.git
 4. Choose where to save the project on your computer.
 5. Click `Open` when VS Code asks to open the cloned repository.
 
-## Prerequisites
 
-Python 3.11 is recommended for compatibility with typical HPC software stacks.
-
-1. Install Python 3.11: https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
-2. Install Git: https://git-scm.com/install/windows
 
 ## VS Code (PowerShell) Setup
+
+Press CTRL + SHIFT + '
+This opens a terminal where you get execute the command below:
 
 Run this command once to allow Python virtual environment activation in VS Code PowerShell:
 
