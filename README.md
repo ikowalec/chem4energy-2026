@@ -67,6 +67,7 @@ https://ase-lib.org/examples_generated/index.html
 - ( ) Cluster discovery
 - ( ) Connectivity matrix and nearest neighbors analysis
 - ( ) Similarity matrices -> ensuring a diverse dataset
+- ( ) ASE and Cluster Expansion (CELL)
 
 # Calculations via ASE:
 - () TS search (+ method breakdown)
