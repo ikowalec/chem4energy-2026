@@ -47,7 +47,7 @@ Schedule:
 Mondays 2pm UK time (4pm SA)
 
 - ASE/MACE setup - Using machine-learned interatomic potentials as a simulation driver
-- ASE/MACE ML-potential training (Kushagra Agrawal)
+- ASE/MACE ML-potential training (external speaker: Dr Kushagra Agrawal)
 - ASE/RDKit - using structural databases and conformer discovery
 - ASE/pymatgen - cutting and modifying material surface
 - ASE/CELL - Cluster Expansion method
