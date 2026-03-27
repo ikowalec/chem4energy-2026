@@ -9,7 +9,7 @@ Python 3.11 is recommended for compatibility with typical HPC software stacks.
 If you are new to coding projects, follow these steps in order.
 
 1. Open VS Code.
-2. Open the Command Palette (`Ctrl+Shift+P`) and run `Git: Clone`.
+2. Open the Command Palette (`Ctrl + Shift + P`) and run `Git: Clone`.
 3. Paste the GitHub repository link:
 
 ```text
@@ -21,7 +21,7 @@ https://github.com/ikowalec/chem4energy-2026.git
 
 
 ## VS Code Setup (initial)
-To open the Extensions menu, press `CTRL + SHIFT + X`, the menu should appear on the left side.
+To open the Extensions menu, press `Ctrl + Shift + X`, the menu should appear on the left side.
 
 Search for and install the following extensions:
 - `Python`
@@ -30,7 +30,7 @@ Search for and install the following extensions:
 If you do not know Python, you will find useful information in the [FAQ document](FAQ.md).
 
 
-To open the terminal window press `CTRL + SHIFT + '`, the terminal window will open in a panel on the bottom.
+To open the terminal window press `Ctrl + Shift + '`, the terminal window will open in a panel on the bottom.
 
 Run this command once to allow Python virtual environment activation in VS Code PowerShell:
 
@@ -53,3 +53,8 @@ If you created the venv via VS Code window there is a good chance it pick up the
 ```powershell
 pip install -r requirements.txt
 ```
+
+# Finally
+The code in this repository is evolving. Before every session make sure you download the newest version of the code, this is done by:
+- Clicking the Source Control panel on the left (also `Ctrl + Shift + G`)
+- Click three dots `...` and choose the `Pull` option - Git will automatically synchronise the code. 
