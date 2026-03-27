@@ -11,8 +11,6 @@ Python 3.11 is recommended for compatibility with typical HPC software stacks.
 1. Install Python 3.11: https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
 2. Install Git: https://git-scm.com/install/windows
 
-If you are not familiar with Python at all, please follow the official Cardiff University tutorials
-by Dr Tom Slater: https://github.com/TomSlater/Introduction-To-Programming-with-Python
 
 If you are new to coding projects, follow these steps in order.
 
@@ -27,14 +25,28 @@ https://github.com/ikowalec/chem4energy-2026.git
 5. Choose where to save the project on your computer.
 6. Click `Open` when VS Code asks to open the cloned repository.
 
+# Learning Python
+If you are not familiar with Python, please follow the official Cardiff University tutorials
+by Dr Tom Slater: https://github.com/TomSlater/Introduction-To-Programming-with-Python
 
+Open a new VS Code window and follow the steps 1-6 above, this time using this link in step 3.:
+```text
+https://github.com/TomSlater/Introduction-To-Programming-with-Python.git
+```
 
-## VS Code (PowerShell) Setup
+Pre-reading.ipynb -> learn how to work with interactive code in Jupyter notebooks
+Then proceed to sessions 1 & 2, allowing 1-3 hours for each, depending on experience.
+
+## VS Code Setup
+To open the Extensions menu, press the following keys
+> CTRL + SHIFT + X
+Search for and install the following extensions:
+> Python
+> Jupyter 
+
 
 Press CTRL + SHIFT + '
-This opens a terminal where you get execute the command below:
-
-Run this command once to allow Python virtual environment activation in VS Code PowerShell:
+This opens a terminal where you get execute the command below. Run this command once to allow Python virtual environment activation in VS Code PowerShell:
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
