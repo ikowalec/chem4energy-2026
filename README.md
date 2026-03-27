@@ -4,6 +4,7 @@ Materials for the Chem4Energy conference hands-on workshops open-source software
 
 List of contributors: 
 - Igor Kowalec (main author)
+- Thomas Hill
 
 ## Start Here (First-Time Users)
 
