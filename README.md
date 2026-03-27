@@ -6,6 +6,8 @@ List of contributors: Igor Kowalec (main author)
 
 ## Start Here (First-Time Users)
 
+Please attempt to go through the steps bellow 
+
 ## Prerequisites
 
 Python 3.11 is recommended for compatibility with typical HPC software stacks.
@@ -27,34 +29,20 @@ https://github.com/ikowalec/chem4energy-2026.git
 5. Choose where to save the project on your computer.
 6. Click `Open` when VS Code asks to open the cloned repository.
 
-# Learning Python
-If you are not familiar with Python, please follow the official Cardiff University tutorials
-by Dr Tom Slater: https://github.com/TomSlater/Introduction-To-Programming-with-Python
 
-Open a new VS Code window and follow the steps 1-6 above, this time using this link in step 3.:
-```text
-https://github.com/TomSlater/Introduction-To-Programming-with-Python.git
-```
-
-Pre-reading.ipynb -> learn how to work with interactive code in Jupyter notebooks
-Then proceed to sessions 1 & 2, allowing 1-3 hours for each, depending on experience.
-
-## VS Code Setup
-To open the Extensions menu, press the following keys
- ```text
- CTRL + SHIFT + X
- ```
+## VS Code Setup (initial)
+To open the Extensions menu, press `CTRL + SHIFT + X`, the menu should appear on the left side.
 
 Search for and install the following extensions:
-- Python
-- Jupyter 
+- `Python`
+- `Jupyter `
 
-To open the terminal window press:
-```text
-CTRL + SHIFT + '
-```
+If you do not know Python, you will find useful information in the [FAQ document](FAQ.md).
 
-This opens a terminal where you get execute the command below. Run this command once to allow Python virtual environment activation in VS Code PowerShell:
+
+To open the terminal window press `CTRL + SHIFT + '`, the terminal window will open in a panel on the bottom.
+
+Run this command once to allow Python virtual environment activation in VS Code PowerShell:
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
