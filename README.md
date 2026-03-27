@@ -1,6 +1,8 @@
-# Chem4Energy 2026
+## Chem4Energy 2026
 
-Materials for the Chem4Energy conference hands-on workshop on ASE/MACE.
+Materials for the Chem4Energy conference hands-on workshops open-source software for computational chemistry.
+
+List of contributors: Igor Kowalec (main author)
 
 ## Start Here (First-Time Users)
 
@@ -39,13 +41,19 @@ Then proceed to sessions 1 & 2, allowing 1-3 hours for each, depending on experi
 
 ## VS Code Setup
 To open the Extensions menu, press the following keys
-> CTRL + SHIFT + X
+ ```text
+ CTRL + SHIFT + X
+ ```
+
 Search for and install the following extensions:
-> Python
-> Jupyter 
+- Python
+- Jupyter 
 
+To open the terminal window press:
+```text
+CTRL + SHIFT + '
+```
 
-Press CTRL + SHIFT + '
 This opens a terminal where you get execute the command below. Run this command once to allow Python virtual environment activation in VS Code PowerShell:
 
 ```powershell
@@ -69,7 +77,12 @@ pip install -r requirements.txt
 ```
 
 # ASE official tutorials:
+
+Atomic Simulation Environment provides an ecosystem for chemical structure analysis and simulation routines.
+
+```text
 https://ase-lib.org/examples_generated/index.html
+```
 
 # Topics to cover:
 - (x) Setting up VS Code 
@@ -77,7 +90,7 @@ https://ase-lib.org/examples_generated/index.html
 - (x) Rendering images of structures 
 - (x) Surface cutting
 - (x) Saving structures as input for qm codes 
-- ( ) ASE as a teaching tool
+- ( ) ASE as a teaching tool and data production
 - ( ) Material doping and atomic substitutions
 - ( ) MLIPs - Using MACE as a calculator 
 - ( ) How can we train MACE models on VASP (or any QM) calculations?
