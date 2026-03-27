@@ -24,13 +24,13 @@ https://ase-lib.org/examples_generated/index.html
 
 # Topics to cover:
 - (x) Setting up VS Code 
-- (x) Installing required libraries and cloning repo 
+- (x) Installing required libraries and cloning repository
 - (x) Rendering images of structures 
 - (x) Surface cutting
 - (x) Saving structures as input for qm codes 
 - ( ) ASE as a teaching tool and data production
 - ( ) Material doping and atomic substitutions
-- ( ) MLIPs - Using MACE as a calculator 
+- ( ) Machine-learned interatomic potentials - Using [MACE](https://mace-docs.readthedocs.io/en/latest/guide/guide.html)
 - ( ) How can we train MACE models on VASP (or any QM) calculations?
 - ( ) Preparing data for MACE model tuning
 - ( ) Automatic adsorbate placement
@@ -38,9 +38,5 @@ https://ase-lib.org/examples_generated/index.html
 - ( ) Connectivity matrix and nearest neighbors analysis
 - ( ) Similarity matrices -> ensuring a diverse dataset
 - ( ) ASE and Cluster Expansion (CELL)
-
-# Calculations via ASE:
-- () TS search (+ method breakdown)
-- () vibrational frequency calculations
-- () ?
+See original paper here: https://www.nature.com/articles/s41524-024-01363-x
 
