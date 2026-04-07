@@ -44,12 +44,16 @@ See original paper by S. Rigamonti <i>et al.</i>: [CELL: a Python package for cl
 Cluster Expansion teaching material adapted from: https://sol.physik.hu-berlin.de/cell/tutorials/tutorials.html
 
 
-# Schedule:
-Mondays 2pm UK time (4pm SA)
+# Schedule proposed:
+Tuesdays 2pm UK time (4pm SA)
 
-First session (?) 13.04.2026
-- ASE/MACE setup - Using machine-learned interatomic potentials as a simulation driver
-- ASE/MACE ML-potential training (external speaker: Dr Kushagra Agrawal)
+14 April 2026 – Software installation, the ASE interface, and the ASE ecosystem as a teaching tool
+
+28 April 2026 – Using ASE with the MACE machine-learned interatomic potential as a calculator
+
+12 May 2026 – How to fine-tune MACE models: basics of data preparation and model parametrisation
+
+# To be announced:
 - ASE/RDKit - using structural databases and conformer discovery
 - ASE/pymatgen - cutting and modifying material surface
 - ASE/CELL - Cluster Expansion method
@@ -62,6 +66,7 @@ First session (?) 13.04.2026
 Gas theme:
 - creating adsorbates, databases, vib freq
 - TD-DFT - NWChem, PySCF, Siesta, ORCA, FHI-aims - free for academic use
+- UV-vis from hybrid DFT - Grimme std2
 
 Bulk techniques:
 - atomic substitution
