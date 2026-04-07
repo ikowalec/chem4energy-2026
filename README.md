@@ -28,7 +28,7 @@ https://ase-lib.org/examples_generated/index.html
 - (x) Rendering images of structures 
 - (x) Surface cutting
 - (x) Saving structures as input for qm codes 
-- ( ) Simulating XRD patterns from bulk structures
+- (x) Simulating XRD patterns from bulk structures
 - ( ) ASE as a teaching tool and data production
 - ( ) Material doping and atomic substitutions
 - ( ) Machine-learned interatomic potentials - Using [MACE](https://mace-docs.readthedocs.io/en/latest/guide/guide.html)
@@ -41,11 +41,13 @@ https://ase-lib.org/examples_generated/index.html
 - ( ) ASE and Cluster Expansion (CELL)
 See original paper by S. Rigamonti <i>et al.</i>: [CELL: a Python package for cluster expansion with a focus on complex alloys](https://www.nature.com/articles/s41524-024-01363-x)
 
-Teaching material adapted from: https://sol.physik.hu-berlin.de/cell/tutorials/tutorials.html
+Cluster Expansion teaching material adapted from: https://sol.physik.hu-berlin.de/cell/tutorials/tutorials.html
 
-Schedule:
+
+# Schedule:
 Mondays 2pm UK time (4pm SA)
 
+First session (?) 13.04.2026
 - ASE/MACE setup - Using machine-learned interatomic potentials as a simulation driver
 - ASE/MACE ML-potential training (external speaker: Dr Kushagra Agrawal)
 - ASE/RDKit - using structural databases and conformer discovery
