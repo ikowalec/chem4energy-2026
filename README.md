@@ -45,7 +45,7 @@ Cluster Expansion teaching material adapted from: https://sol.physik.hu-berlin.d
 
 
 # Schedule proposed:
-Tuesdays 2pm UK time (4pm SA)
+Tuesdays 14:00 UK Summer time (GMT+1)
 
 14 April 2026 – Software installation, the ASE interface, and the ASE ecosystem as a teaching tool
 
@@ -60,7 +60,6 @@ Tuesdays 2pm UK time (4pm SA)
 - ASE/acat - adsorbate placement on gas-phase clusters and surfaces
 - ASE/REMatch/SOAP - Structural similarity, cluster discovery
 - ASE/CatLearn - ML-accelerated optimisation and transition-state workflows
-
 - ASE/QM - Interfacing ASE with QM codes for data production
 
 Gas theme:
