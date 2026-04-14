@@ -1,10 +1,10 @@
 # First configuration
 
-Python 3.11 is recommended for compatibility with typical HPC software stacks.
+Download and install:
 
-1. Install Python 3.11: https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
-2. Install Git: https://git-scm.com/install/windows
-
+1. [Microsoft Visual Studio Code](https://code.visualstudio.com/) to engage with the tutorials, edit and run code.
+2. [Python](https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe) - Python 3.11 is recommended for compatibility with typical HPC software stacks.
+3. [Git](https://git-scm.com/install/windows) - For managing version control and keeping the tutorial materials up to date.
 
 If you are new to coding projects, follow these steps in order.
 
