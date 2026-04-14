@@ -21,3 +21,11 @@ pip install --upgrade pip
 pip install mace-torch
 ```
 See official [documentation](https://mace-docs.readthedocs.io/en/latest/guide/installation.html).
+
+### Updating the virtual environment with new packages
+If new dependendencies have been added since the last tutorial, you can download them by using the pip package manager
+
+```bash
+. .\.venv\Scripts\activate
+pip install -r requirements.txt
+```
