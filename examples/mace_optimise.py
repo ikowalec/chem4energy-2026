@@ -1,3 +1,5 @@
+# Author: Thomas Hill
+
 from mace.calculators import mace_mp
 from ase.io import read
 from ase.build import bulk  
