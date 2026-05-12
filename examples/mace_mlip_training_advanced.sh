@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Generic MACE MLIP fine-tuning workflow.
+# Advanced MACE MLIP fine-tuning workflow.
 #
 # Run from the project root, after activating an environment with mace-torch.
 # Override any variable at runtime, for example:
 #
-#   TRAIN_FILE=data/train.xyz TEST_FILE=data/test.xyz ./examples/mace_mlip_training.sh
+#   TRAIN_FILE=data/train.xyz TEST_FILE=data/test.xyz ./examples/mace_mlip_training_advanced.sh
 #
 # For a multi-GPU single-node run:
 #
-#   NPROC_PER_NODE=4 ./examples/mace_mlip_training.sh
+#   NPROC_PER_NODE=4 ./examples/mace_mlip_training_advanced.sh
 
 RUN_NAME="${RUN_NAME:-mace_omat_finetuning}"
 
