@@ -1,20 +1,10 @@
 # Frequently asked questions
 
-### How do I start? I do not even know Python!
+## Questions
 
-If you are not familiar with Python, please follow the [official Cardiff University tutorials](https://github.com/TomSlater/Introduction-To-Programming-with-Python) by Dr Tom Slater.
-
-Open a new VS Code window and follow the steps 1-6 above, this time using this link in step 3.:
-```text
-https://github.com/TomSlater/Introduction-To-Programming-with-Python.git
-```
-
-`Pre-reading.ipynb` - learn how to work with interactive code in Jupyter notebooks
-
-Then proceed to sessions 1 & 2, allowing 1-3 hours for each, depending on experience.
-
-Alternatively, if you would like to follow a more comprehensive course on which Dr Slater's materials are based,
-please see the materials from [The University of Edinburgh](https://github.com/Edinburgh-Chemistry-Teaching/Data-driven-chemistry). 
+- [Installing MACE](#installing-mace)
+- [Updating the virtual environment with new packages](#updating-the-virtual-environment-with-new-packages)
+- [How do I start? I do not even know Python!](#how-do-i-start-i-do-not-even-know-python)
 
 ### Installing MACE
 The recommended way of installing MACE is:
@@ -31,3 +21,20 @@ If new dependendencies have been added since the last tutorial, you can download
 . .\.venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
+
+### How do I start? I do not even know Python!
+
+If you are not familiar with Python, please follow the [official Cardiff University tutorials](https://github.com/TomSlater/Introduction-To-Programming-with-Python) by Dr Tom Slater.
+
+Open a new VS Code window and follow the steps 1-6 above, this time using this link in step 3.:
+```text
+https://github.com/TomSlater/Introduction-To-Programming-with-Python.git
+```
+
+`Pre-reading.ipynb` - learn how to work with interactive code in Jupyter notebooks
+
+Then proceed to sessions 1 & 2, allowing 1-3 hours for each, depending on experience.
+
+Alternatively, if you would like to follow a more comprehensive course on which Dr Slater's materials are based,
+please see the materials from [The University of Edinburgh](https://github.com/Edinburgh-Chemistry-Teaching/Data-driven-chemistry). 
