@@ -1,42 +1,37 @@
-#!/usr/bin/env bash
-set -euo pipefail
 
-# Minimal local CPU training example for a VS Code terminal.
-#
-# Run from the repository root after activating your Python environment.
-# The input files should be extended XYZ files with ref_energy/ref_forces labels.
-#
-#   TRAIN_FILE=data/train.extxyz TEST_FILE=data/test.extxyz ./examples/mace_mlip_training_cpu_minimal.sh
+# Minimal example of training a MACE MLIP
+# Required inputs for mace fine tuning:
 
-RUN_NAME="${RUN_NAME:-mace_cpu_minimal}"
-TRAIN_FILE="${TRAIN_FILE:-data/train.extxyz}"
-TEST_FILE="${TEST_FILE:-data/test.extxyz}"
-
-python -m mace.cli.run_train \
-    --name="$RUN_NAME" \
-    --train_file="$TRAIN_FILE" \
-    --valid_fraction=0.05 \
-    --test_file="$TEST_FILE" \
-    --E0s="average" \
-    --model="MACE" \
-    --num_interactions=2 \
-    --num_channels=32 \
-    --max_L=1 \
-    --correlation=2 \
-    --r_max=5.0 \
-    --energy_key="ref_energy" \
-    --forces_key="ref_forces" \
-    --energy_weight=10 \
-    --forces_weight=100 \
-    --batch_size=1 \
-    --valid_batch_size=1 \
-    --max_num_epochs=5 \
-    --eval_interval=1 \
-    --ema \
-    --error_table="PerAtomMAE" \
-    --amsgrad \
-    --default_dtype="float32" \
-    --device=cpu \
-    --seed=123 \
-    --restart_latest \
-    --save_cpu
+python mace.cli.run_train.py \
+--name="fine_tuning" \
+--num_channels=128 \
+--foundation_model="/shared/home/mace-omat-0-medium.model" \
+--multiheads_finetuning=True \
+--train_file="/shared/home/training_omat/stratified_sample.xyz" \
+--valid_fraction=0.2 \
+--test_file="/shared/home/training_omat/test.xyz" \
+--E0s='{8:-2049.91807262, 78: -518568.86288573, 22: -23328.13360429}' \
+--forces_weight=100 \
+--energy_weight=1 \
+--energy_key='ref_energy' \
+--forces_key='ref_forces' \
+--lr=0.01 \
+--scaling="rms_forces_scaling" \
+--batch_size=4 \
+--valid_batch_size=4 \
+--max_num_epochs=200 \
+--start_swa=300 \
+--swa \
+--swa_forces_weight=100 \
+--ema \
+--ema_decay=0.99 \
+--pt_train_file="omat" \
+--num_samples_pt 30000 \
+--amsgrad \
+--error_table='PerAtomMAE' \
+--device='cuda' \
+--distributed \
+--default_dtype="float64" \
+--seed=123 \
+--restart_latest \
+--save_cpu
