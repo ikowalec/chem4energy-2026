@@ -30,11 +30,10 @@ https://ase-lib.org/examples_generated/index.html
 - (x) Surface cutting
 - (x) Saving structures as input for qm codes 
 - (x) Simulating XRD patterns from bulk structures
-- ( ) ASE as a teaching tool and data production
+- (x) ASE as a teaching tool and data production
+- (x) Machine-learned interatomic potentials - Using [MACE](https://mace-docs.readthedocs.io/en/latest/guide/guide.html)
+- (x) How can we train MACE models on VASP (or any QM) calculations? Preparing data for MACE model tuning.
 - ( ) Material doping and atomic substitutions
-- ( ) Machine-learned interatomic potentials - Using [MACE](https://mace-docs.readthedocs.io/en/latest/guide/guide.html)
-- ( ) How can we train MACE models on VASP (or any QM) calculations?
-- ( ) Preparing data for MACE model tuning
 - ( ) Automatic adsorbate placement
 - ( ) Cluster discovery
 - ( ) Connectivity matrix and nearest neighbors analysis
